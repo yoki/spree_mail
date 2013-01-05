@@ -7,7 +7,7 @@ end
 Spree::UsersController.class_eval do
   
   def get_subscriber
-    @subscriber = Subscriber.find_by_email(current_user.email) if current_user
+    @subscriber = Spree::Subscriber.find_by_email(current_user.email) if current_user
   end
   
 end

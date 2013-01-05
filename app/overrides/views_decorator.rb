@@ -2,7 +2,7 @@ Deface::Override.new(
   :virtual_path => "spree/users/show",
   :name => "spree_mail_account_summary",
   :insert_after => "[data-hook='account_my_orders'], #account_my_orders[data-hook]",
-  :partial => "hooks/account_summary",
+  :partial => "spree/hooks/account_summary",
   :disabled => false)
 
 

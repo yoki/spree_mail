@@ -1,0 +1,10 @@
+ja:
+  subscribe_newsletter_too: 'メールマガジンを購読する'
+  unsubscribe: 'メールマガジン配信停止'
+  unsubscribe_title: '配信を停止する'
+  newsletter: 'メールマガジン'
+  newsletter_signed_up: '配信中'
+  newsletter_signup: 'お得な情報を配信するメールマガジンを希望する方は、以下のリンクをクリックしてください。'
+  subscribe: '申し込む'
+  unsubscribe_success_public: 'メールマガジンの購読を解除しました。'
+  subscribe_success_public: 'メールマガジンの申し込みを受け付けました。'
