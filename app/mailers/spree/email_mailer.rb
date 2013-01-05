@@ -1,4 +1,4 @@
-class EmailMailer < ActionMailer::Base
+class Spree::EmailMailer < ActionMailer::Base
     
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::TextHelper

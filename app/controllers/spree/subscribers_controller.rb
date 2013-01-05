@@ -1,4 +1,4 @@
-class SubscribersController < Spree::BaseController
+class Spree::SubscribersController < Spree::BaseController
 
   before_filter :get_subscriber, :only => [:show, :unsubscribe, :resubscribe]
   

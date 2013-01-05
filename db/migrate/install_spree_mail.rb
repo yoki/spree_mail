@@ -1,14 +1,14 @@
 class InstallSpreeMail < ActiveRecord::Migration
   
   def self.up
-    create_table :subscribers do |t|
+    create_table :spree_subscribers do |t|
       t.string     :token
       t.string     :name
       t.string     :email
       t.datetime   :unsubscribed_at
       t.timestamps
     end
-    create_table :emails do |t|
+    create_table :spree_emails do |t|
       t.string     :token
       t.text       :to
       t.string     :subject
@@ -18,8 +18,8 @@ class InstallSpreeMail < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :subscribers
-    drop_table :emails
+    drop_table :spree_subscribers
+    drop_table :spree_emails
   end
 
 end

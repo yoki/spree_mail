@@ -1,4 +1,4 @@
-class EmailsController < Spree::BaseController
+class Spree::EmailsController < Spree::BaseController
       
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::TextHelper

@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Spree::Core::Engine.routes.prepend do
   
   get "/email/:subscriber/:email", :to => "emails#show", :as => :read_email
   get "/subscribers" => redirect("/subscribers/new")

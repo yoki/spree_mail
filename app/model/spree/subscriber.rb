@@ -1,4 +1,4 @@
-class Subscriber < ActiveRecord::Base
+class Spree::Subscriber < ActiveRecord::Base
 
   include SpreeMail::HasToken
   
@@ -9,6 +9,7 @@ class Subscriber < ActiveRecord::Base
   
   #validates :name,  :presence => true
   validates :email, :email => true, :uniqueness => true
+  attr_accessible :email, :name
     
   def active?
     unsubscribed_at.to_s.empty?

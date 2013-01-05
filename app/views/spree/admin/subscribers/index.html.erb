@@ -1,4 +1,4 @@
-<%= render 'admin/shared/spree_mail_sub_nav' %>
+<%= render partial: 'spree/admin/shared/spree_mail_sub_nav' %>
 
 <div class='toolbar'>
   <ul class='actions'>
@@ -16,63 +16,52 @@
   <br class='clear' />
 </div>
 
-
 <h1><%= t('listing_subscribers') %></h1>
 
 
 <table class="index">
   <thead>
   <tr>
-    <%= hook :admin_subscribers_index_headers do %>
-      <th><%= sort_link @search, :name, t('name') %></th>
-      <th><%= sort_link @search, :email, t('email') %></th>
-      <th><%= hook :admin_subscribers_index_header_actions %></th>
-    <% end %>
+      <th><%= t('name') %></th>
+      <th><%= t('email') %></th>
+
   </tr>
   </thead>
   <tbody>
     <% @subscribers.each do |subscriber|%>
       <tr id="<%= dom_id subscriber %>">
         <%- locals = {:subscriber => subscriber} %>
-        <%= hook :admin_subscribers_index_rows, locals do %>
           <td><%=link_to subscriber.name || "(anonymous)", object_url(subscriber) %></td>
           <td><%= mail_to subscriber.email %></td>
-        <% end %>
         <td>
-          <%= hook :admin_subscribers_index_row_actions, locals do %>
             <%= link_to_edit subscriber %> &nbsp;
             <%= link_to_delete subscriber %> &nbsp;
             <%= render 'options', :subscriber => subscriber %>
-          <% end %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= will_paginate(:previous_label => "&#171; #{t('previous')}", :next_label => "#{t('next')} &#187;") %>
+<%= paginate @subscribers%>
 
 
 <% content_for :sidebar do %>
-<div class="box">
+<!-- <div class="box">
   <h3><%= t('search') %></h3>
 
-  <% @subscriber = Subscriber.metasearch %>
-  <%= form_for [:admin, @subscriber] do |f| %>
-    <%- locals = {:f => f} %>
-    <%= hook :admin_subscribers_index_search, locals do %>
+  <%# @subscriber = Subscriber.metasearch %>
+  <%#= form_for [:admin, @subscriber] do |f| %>
+    <%#- locals = {:f => f} %>
       <p>
         <label><%= t 'name' %></label><br />
-        <%= f.text_field :name_like, :size => 25 %>
+        <%#= f.text_field :name_like, :size => 25 %>
       </p>
       <p>
         <label><%= t 'email' %></label><br />
-        <%= f.text_field :email_like, :size => 25 %>
+        <%#= f.text_field :email_like, :size => 25 %>
       </p>
-    <% end %>
-    <%= hook :admin_subscribers_index_search_buttons, locals do %>
-      <p><%= button t('search') %></p>
-    <% end %>
-  <% end %>
-</div>
+      <p><%#= button t('search') %></p>
+  <%# end %>
+</div> -->
 <% end %>

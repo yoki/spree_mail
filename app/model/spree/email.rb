@@ -1,4 +1,4 @@
-class Email < ActiveRecord::Base
+class Spree::Email < ActiveRecord::Base
 
   include SpreeMail::HasToken
 
